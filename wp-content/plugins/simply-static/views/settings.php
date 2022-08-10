@@ -1,14 +1,19 @@
 <?php
 namespace Simply_Static;
 ?>
-
-<h1><?php _e( 'Simply Static &rsaquo; Settings', 'simply-static' ); ?></h1>
+<div class="simply-static-admin-header">
+	<div class="logo"><img src="<?php echo esc_url( SIMPLY_STATIC_URL . '/assets/simply-static-logo.svg' ); ?>" /></div>
+				<div class="info-links">
+					<?php do_action( 'simply_static_admin_info_links' ); ?>
+				</div>
+			</div>
 
 <div class='wrap' id='settingsPage'>
 
 	<h2 id='sistTabs' class='nav-tab-wrapper'>
 		<a class='nav-tab' id='general-tab' href='#tab-general'><?php _e( 'General', 'simply-static' ); ?></a>
 		<a class='nav-tab' id='include-exclude-tab' href='#tab-include-exclude'><?php _e( 'Include/Exclude', 'simply-static' ); ?></a>
+		<?php do_action( 'simply_static_settings_view_tab' ); ?>
 		<a class='nav-tab' id='advanced-tab' href='#tab-advanced'><?php _e( 'Advanced', 'simply-static' ); ?></a>
 		<a class='nav-tab' id='reset-settings-tab' href='#tab-reset-settings'><?php _e( 'Reset', 'simply-static' ); ?></a>
 	</h2>
@@ -84,9 +89,11 @@ namespace Simply_Static;
 							<select name='delivery_method' id='deliveryMethod'>
 								<option value='zip' <?php Util::selected_if( $this->delivery_method === 'zip' ) ?>><?php _e( "ZIP Archive", 'simply-static' ); ?></option>
 								<option value='local' <?php Util::selected_if( $this->delivery_method === 'local' ) ?>><?php _e( "Local Directory", 'simply-static' ); ?></option>
+								<?php do_action( 'simply_static_delivery_methods' ); ?>
 							</select>
 						</td>
 					</tr>
+					<?php do_action( 'simply_static_delivery_method_description' ); ?>
 					<tr class='delivery-method zip'>
 						<th></th>
 						<td>
@@ -215,7 +222,7 @@ namespace Simply_Static;
 				</tbody>
 			</table>
 		</div>
-
+		<?php do_action( 'simply_static_settings_view_form' ); ?>
 		<div id='advanced' class='tab-pane'>
 			<h2 class="title"><?php _e( "Temporary Files", 'simply-static' ); ?></h2>
 			<p><?php _e( "Your static files are temporarily saved to a directory before being copied to their destination or creating a ZIP.", 'simply-static' ); ?></p>
@@ -232,18 +239,6 @@ namespace Simply_Static;
 								<p><?php _e( "Specify the directory to save your temporary files. This directory must exist and be writeable.", 'simply-static' ); ?></p>
 								<p><?php echo sprintf( __( "Default: <code>%s</code>", 'simply-static' ), $example_temp_files_dir ); ?></p>
 							</div>
-						</td>
-					</tr>
-					<tr>
-						<th>
-							<label><?php _e( "Delete Temporary Files", 'simply-static' ); ?></label>
-						</th>
-						<td>
-							<label>
-								<input name='delete_temp_files' value='0' type='hidden' />
-								<input aria-describedby='deleteTempFilesHelpBlock' name='delete_temp_files' id='deleteTempFiles' value='1' type='checkbox' <?php Util::checked_if( $this->delete_temp_files === '1' ); ?> />
-								<?php _e( "Delete temporary files at the end of the job", 'simply-static' ); ?>
-							</label>
 						</td>
 					</tr>
 				</tbody>
@@ -281,6 +276,21 @@ namespace Simply_Static;
 						</th>
 						<td>
 							<input type='text' id='basicAuthPassword' name='basic_auth_password' value='' <?php if ( $this->http_basic_auth_digest != null ) echo 'disabled' ?> />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2 class="title"><?php _e( "WP-Cron", 'simply-static' ); ?></h2>
+			<p><?php _e( "If you want to export a large site with Simply Static you may want to use WP-Cron for that.", 'simply-static' ); ?></p>
+			<table class='form-table  id='cron'>
+				<tbody>
+					<tr>
+						<th>
+							<label for='use_cron'><?php _e( "Use WP-Cron", 'simply-static' ); ?></label>
+						</th>
+						<td>						
+							<input type="checkbox" name="use_cron" id="use_cron" <?php Util::checked_if( $this->use_cron === 'on' ); ?> />
 						</td>
 					</tr>
 				</tbody>
@@ -325,5 +335,4 @@ namespace Simply_Static;
 		</div>
 
 	</form>
-
 </div>
