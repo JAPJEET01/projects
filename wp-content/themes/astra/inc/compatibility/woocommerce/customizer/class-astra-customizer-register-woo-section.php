@@ -34,6 +34,13 @@ if ( ! class_exists( 'Astra_Customizer_Register_Woo_Section' ) ) {
 			$configs = array(
 
 				array(
+					'name'     => 'section-woo-general',
+					'title'    => __( 'General', 'astra' ),
+					'type'     => 'section',
+					'priority' => 10,
+					'panel'    => 'woocommerce',
+				),
+				array(
 					'name'     => 'section-woo-shop',
 					'title'    => __( 'Shop', 'astra' ),
 					'type'     => 'section',
@@ -54,22 +61,6 @@ if ( ! class_exists( 'Astra_Customizer_Register_Woo_Section' ) ) {
 					'type'     => 'section',
 					'title'    => __( 'Cart', 'astra' ),
 					'priority' => 20,
-					'panel'    => 'woocommerce',
-				),
-
-				array(
-					'name'     => 'section-woo-general',
-					'title'    => __( 'General', 'astra' ),
-					'type'     => 'section',
-					'priority' => 10,
-					'panel'    => 'woocommerce',
-				),
-
-				array(
-					'name'     => 'section-woo-misc',
-					'title'    => __( 'Misc', 'astra' ),
-					'type'     => 'section',
-					'priority' => 24.5,
 					'panel'    => 'woocommerce',
 				),
 			);

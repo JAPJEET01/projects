@@ -77,201 +77,6 @@ class Astra_Social_Icon_Component_Configs {
 					'description' => '',
 				),
 
-				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-type' ),
-					'section'    => $_section,
-					'type'       => 'control',
-					'control'    => 'ast-selector',
-					'title'      => __( 'Color Type', 'astra' ),
-					'priority'   => 1,
-					'choices'    => array(
-						'custom'   => __( 'Custom', 'astra' ),
-						'official' => __( 'Official', 'astra' ),
-					),
-					'transport'  => 'postMessage',
-					'context'    => Astra_Builder_Helper::$design_tab,
-					'responsive' => false,
-					'renderAs'   => 'text',
-					'divider'    => array( 'ast_class' => 'ast-section-spacing ast-bottom-dotted-divider' ),
-				),
-
-				/**
-				 * Group: Primary Social Colors Group
-				 */
-				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-group' ),
-					'type'       => 'control',
-					'control'    => 'ast-color-group',
-					'title'      => __( 'Icon Color', 'astra' ),
-					'section'    => $_section,
-					'transport'  => 'postMessage',
-					'priority'   => 1,
-					'context'    => array(
-						Astra_Builder_Helper::$design_tab_config,
-						array(
-							'setting'  => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
-							'operator' => '==',
-							'value'    => 'custom',
-						),
-					),
-					'responsive' => true,
-				),
-				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-group' ),
-					'type'       => 'control',
-					'control'    => 'ast-color-group',
-					'title'      => __( 'Label Color', 'astra' ),
-					'section'    => $_section,
-					'transport'  => 'postMessage',
-					'priority'   => 1,
-					'context'    => array(
-						Astra_Builder_Helper::$design_tab_config,
-						array(
-							'setting'  => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
-							'operator' => '==',
-							'value'    => 'custom',
-						),
-					),
-					'responsive' => true,
-				),
-				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-group' ),
-					'type'       => 'control',
-					'control'    => 'ast-color-group',
-					'title'      => __( 'Background Color', 'astra' ),
-					'section'    => $_section,
-					'transport'  => 'postMessage',
-					'priority'   => 1,
-					'context'    => array(
-						Astra_Builder_Helper::$design_tab_config,
-						array(
-							'setting'  => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
-							'operator' => '==',
-							'value'    => 'custom',
-						),
-					),
-					'responsive' => true,
-					'divider'    => array( 'ast_class' => 'ast-bottom-section-divider' ),
-				),
-
-				/**
-				* Option: Social Text Color
-				*/
-				array(
-					'name'       => $builder_type . '-social-' . $index . '-color',
-					'transport'  => 'postMessage',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color' ),
-					'type'       => 'sub-control',
-					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
-					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
-					'control'    => 'ast-responsive-color',
-					'responsive' => true,
-					'rgba'       => true,
-					'priority'   => 1,
-					'context'    => Astra_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
-				),
-
-				/**
-				* Option: Social Text Hover Color
-				*/
-				array(
-					'name'       => $builder_type . '-social-' . $index . '-h-color',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-h-color' ),
-					'transport'  => 'postMessage',
-					'type'       => 'sub-control',
-					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
-					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
-					'control'    => 'ast-responsive-color',
-					'responsive' => true,
-					'rgba'       => true,
-					'priority'   => 1,
-					'context'    => Astra_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
-				),
-
-				/**
-				* Option: Social Label Color
-				*/
-				array(
-					'name'       => $builder_type . '-social-' . $index . '-label-color',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-label-color' ),
-					'transport'  => 'postMessage',
-					'type'       => 'sub-control',
-					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
-					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
-					'control'    => 'ast-responsive-color',
-					'responsive' => true,
-					'rgba'       => true,
-					'priority'   => 1,
-					'context'    => Astra_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
-				),
-
-				/**
-				* Option: Social Label Hover Color
-				*/
-				array(
-					'name'       => $builder_type . '-social-' . $index . '-label-h-color',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-label-h-color' ),
-					'transport'  => 'postMessage',
-					'type'       => 'sub-control',
-					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
-					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
-					'control'    => 'ast-responsive-color',
-					'responsive' => true,
-					'rgba'       => true,
-					'priority'   => 1,
-					'context'    => Astra_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
-				),
-
-				/**
-				* Option: Social Background Color
-				*/
-				array(
-					'name'       => $builder_type . '-social-' . $index . '-bg-color',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-bg-color' ),
-					'transport'  => 'postMessage',
-					'type'       => 'sub-control',
-					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
-					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
-					'control'    => 'ast-responsive-color',
-					'responsive' => true,
-					'rgba'       => true,
-					'priority'   => 1,
-					'context'    => Astra_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
-				),
-
-				/**
-				* Option: Social Background Hover Color
-				*/
-				array(
-					'name'       => $builder_type . '-social-' . $index . '-bg-h-color',
-					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-bg-h-color' ),
-					'transport'  => 'postMessage',
-					'type'       => 'sub-control',
-					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
-					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
-					'control'    => 'ast-responsive-color',
-					'responsive' => true,
-					'rgba'       => true,
-					'priority'   => 1,
-					'context'    => Astra_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
-				),
-
 				/**
 				 * Option: Social Icons.
 				 */
@@ -291,7 +96,7 @@ class Astra_Social_Icon_Component_Configs {
 						'fallback_refresh'    => false,
 					),
 					'context'   => Astra_Builder_Helper::$general_tab,
-					'divider'   => array( 'ast_class' => 'ast-bottom-section-divider ast-section-spacing' ),
+					'divider'   => array( 'ast_class' => 'ast-bottom-divider' ),
 				),
 
 				// Show label Toggle.
@@ -311,6 +116,7 @@ class Astra_Social_Icon_Component_Configs {
 						'fallback_refresh'    => false,
 					),
 					'context'   => Astra_Builder_Helper::$general_tab,
+					'divider'   => array( 'ast_class' => 'ast-bottom-divider' ),
 				),
 
 				/**
@@ -332,7 +138,7 @@ class Astra_Social_Icon_Component_Configs {
 						'step' => 1,
 						'max'  => 50,
 					),
-					'divider'           => array( 'ast_class' => 'ast-bottom-dotted-divider' ),
+					'divider'           => array( 'ast_class' => 'ast-bottom-divider' ),
 					'context'           => Astra_Builder_Helper::$design_tab,
 				),
 
@@ -356,7 +162,7 @@ class Astra_Social_Icon_Component_Configs {
 						'max'  => 50,
 					),
 					'context'     => Astra_Builder_Helper::$design_tab,
-					'divider'     => array( 'ast_class' => 'ast-bottom-dotted-divider' ),
+					'divider'     => array( 'ast_class' => 'ast-bottom-divider' ),
 				),
 
 
@@ -379,7 +185,7 @@ class Astra_Social_Icon_Component_Configs {
 						'step' => 1,
 						'max'  => 50,
 					),
-					'divider'           => array( 'ast_class' => 'ast-bottom-dotted-divider' ),
+					'divider'           => array( 'ast_class' => 'ast-bottom-divider' ),
 					'context'           => Astra_Builder_Helper::$design_tab,
 				),
 
@@ -401,22 +207,201 @@ class Astra_Social_Icon_Component_Configs {
 						'step' => 1,
 						'max'  => 50,
 					),
+					'divider'     => array( 'ast_class' => 'ast-bottom-divider' ),
 					'context'     => Astra_Builder_Helper::$design_tab,
 				),
 
+				array(
+					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-type' ),
+					'section'    => $_section,
+					'type'       => 'control',
+					'control'    => 'ast-selector',
+					'title'      => __( 'Color Type', 'astra' ),
+					'priority'   => 8,
+					'choices'    => array(
+						'custom'   => __( 'Custom', 'astra' ),
+						'official' => __( 'Official', 'astra' ),
+					),
+					'transport'  => 'postMessage',
+					'context'    => Astra_Builder_Helper::$design_tab,
+					'responsive' => false,
+					'renderAs'   => 'text',
+				),
+
 				/**
-				 * Option: Divider
+				 * Group: Primary Social Colors Group
 				 */
 				array(
-					'name'     => ASTRA_THEME_SETTINGS . '[' . $_section . '-margin-divider]',
-					'section'  => $_section,
-					'title'    => __( 'Spacing', 'astra' ),
-					'type'     => 'control',
-					'control'  => 'ast-heading',
-					'priority' => 49,
-					'settings' => array(),
-					'context'  => Astra_Builder_Helper::$design_tab,
-					'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
+					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-group' ),
+					'type'       => 'control',
+					'control'    => 'ast-color-group',
+					'title'      => __( 'Icon Color', 'astra' ),
+					'section'    => $_section,
+					'transport'  => 'postMessage',
+					'priority'   => 9,
+					'context'    => array(
+						Astra_Builder_Helper::$design_tab_config,
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
+							'operator' => '==',
+							'value'    => 'custom',
+						),
+					),
+					'responsive' => true,
+				),
+				array(
+					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-group' ),
+					'type'       => 'control',
+					'control'    => 'ast-color-group',
+					'title'      => __( 'Label Color', 'astra' ),
+					'section'    => $_section,
+					'transport'  => 'postMessage',
+					'priority'   => 9,
+					'context'    => array(
+						Astra_Builder_Helper::$design_tab_config,
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
+							'operator' => '==',
+							'value'    => 'custom',
+						),
+					),
+					'responsive' => true,
+				),
+				array(
+					'name'       => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color-group' ),
+					'type'       => 'control',
+					'control'    => 'ast-color-group',
+					'title'      => __( 'Background Color', 'astra' ),
+					'section'    => $_section,
+					'transport'  => 'postMessage',
+					'priority'   => 9,
+					'context'    => array(
+						Astra_Builder_Helper::$design_tab_config,
+						array(
+							'setting'  => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-color-type]',
+							'operator' => '==',
+							'value'    => 'custom',
+						),
+					),
+					'responsive' => true,
+				),
+
+				/**
+				* Option: Social Text Color
+				*/
+				array(
+					'name'       => $builder_type . '-social-' . $index . '-color',
+					'transport'  => 'postMessage',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-color' ),
+					'type'       => 'sub-control',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
+					'section'    => $_section,
+					'tab'        => __( 'Normal', 'astra' ),
+					'control'    => 'ast-responsive-color',
+					'responsive' => true,
+					'rgba'       => true,
+					'priority'   => 5,
+					'context'    => Astra_Builder_Helper::$design_tab,
+					'title'      => __( 'Normal', 'astra' ),
+				),
+
+				/**
+				* Option: Social Text Hover Color
+				*/
+				array(
+					'name'       => $builder_type . '-social-' . $index . '-h-color',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-h-color' ),
+					'transport'  => 'postMessage',
+					'type'       => 'sub-control',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
+					'section'    => $_section,
+					'tab'        => __( 'Hover', 'astra' ),
+					'control'    => 'ast-responsive-color',
+					'responsive' => true,
+					'rgba'       => true,
+					'priority'   => 7,
+					'context'    => Astra_Builder_Helper::$design_tab,
+					'title'      => __( 'Hover', 'astra' ),
+				),
+
+				/**
+				* Option: Social Label Color
+				*/
+				array(
+					'name'       => $builder_type . '-social-' . $index . '-label-color',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-label-color' ),
+					'transport'  => 'postMessage',
+					'type'       => 'sub-control',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
+					'section'    => $_section,
+					'tab'        => __( 'Normal', 'astra' ),
+					'control'    => 'ast-responsive-color',
+					'responsive' => true,
+					'rgba'       => true,
+					'priority'   => 8,
+					'context'    => Astra_Builder_Helper::$design_tab,
+					'title'      => __( 'Normal', 'astra' ),
+				),
+
+				/**
+				* Option: Social Label Hover Color
+				*/
+				array(
+					'name'       => $builder_type . '-social-' . $index . '-label-h-color',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-label-h-color' ),
+					'transport'  => 'postMessage',
+					'type'       => 'sub-control',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
+					'section'    => $_section,
+					'tab'        => __( 'Hover', 'astra' ),
+					'control'    => 'ast-responsive-color',
+					'responsive' => true,
+					'rgba'       => true,
+					'priority'   => 8,
+					'context'    => Astra_Builder_Helper::$design_tab,
+					'title'      => __( 'Hover', 'astra' ),
+				),
+
+				/**
+				* Option: Social Background Color
+				*/
+				array(
+					'name'       => $builder_type . '-social-' . $index . '-bg-color',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-bg-color' ),
+					'transport'  => 'postMessage',
+					'type'       => 'sub-control',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
+					'section'    => $_section,
+					'tab'        => __( 'Normal', 'astra' ),
+					'control'    => 'ast-responsive-color',
+					'responsive' => true,
+					'rgba'       => true,
+					'priority'   => 9,
+					'context'    => Astra_Builder_Helper::$design_tab,
+					'title'      => __( 'Normal', 'astra' ),
+				),
+
+				/**
+				* Option: Social Background Hover Color
+				*/
+				array(
+					'name'       => $builder_type . '-social-' . $index . '-bg-h-color',
+					'default'    => astra_get_option( $builder_type . '-social-' . $index . '-bg-h-color' ),
+					'transport'  => 'postMessage',
+					'type'       => 'sub-control',
+					'parent'     => ASTRA_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
+					'section'    => $_section,
+					'tab'        => __( 'Hover', 'astra' ),
+					'control'    => 'ast-responsive-color',
+					'responsive' => true,
+					'rgba'       => true,
+					'priority'   => 11,
+					'context'    => Astra_Builder_Helper::$design_tab,
+					'title'      => __( 'Hover', 'astra' ),
 				),
 
 				/**
@@ -430,7 +415,7 @@ class Astra_Social_Icon_Component_Configs {
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'Astra_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $_section,
-					'priority'          => 49,
+					'priority'          => 220,
 					'title'             => __( 'Margin', 'astra' ),
 					'linked_choices'    => true,
 					'unit_choices'      => array( 'px', 'em', '%' ),
@@ -441,7 +426,6 @@ class Astra_Social_Icon_Component_Configs {
 						'left'   => __( 'Left', 'astra' ),
 					),
 					'context'           => Astra_Builder_Helper::$design_tab,
-					'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
 				),
 			);
 
@@ -462,7 +446,6 @@ class Astra_Social_Icon_Component_Configs {
 						'center' => 'align-center',
 						'right'  => 'align-right',
 					),
-					'divider'   => array( 'ast_class' => 'ast-top-section-divider' ),
 				);
 			}
 

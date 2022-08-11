@@ -73,11 +73,6 @@ const AdvancedSettings = () => {
 			? requiredPlugins.required_plugins.inactive
 			: [];
 
-	const notInstalled =
-		requiredPlugins !== null
-			? requiredPlugins.required_plugins.notinstalled
-			: [];
-
 	const themeStatusClass =
 		'installed-and-active' !== themeStatus ? 'theme-check' : '';
 
@@ -195,8 +190,7 @@ const AdvancedSettings = () => {
 							{ __( 'Import Widgets', 'astra-sites' ) }
 						</label>
 					</li>
-					{ ( notActivePlugins.length > 0 ||
-						notInstalled.length > 0 ) && (
+					{ notActivePlugins.length > 0 && (
 						<li>
 							<input
 								type="checkbox"

@@ -64,26 +64,22 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 				/**
 				 * Option: Column count
 				 */
-
 				array(
-					'name'       => ASTRA_THEME_SETTINGS . '[hbb-footer-column]',
-					'default'    => astra_get_option( 'hbb-footer-column' ),
-					'type'       => 'control',
-					'control'    => 'ast-selector',
-					'section'    => $_section,
-					'priority'   => 2,
-					'title'      => __( 'Column', 'astra' ),
-					'choices'    => $column_count,
-					'context'    => Astra_Builder_Helper::$general_tab,
-					'transport'  => 'postMessage',
-					'renderAs'   => 'text',
-					'partial'    => array(
+					'name'      => ASTRA_THEME_SETTINGS . '[hbb-footer-column]',
+					'default'   => astra_get_option( 'hbb-footer-column' ),
+					'type'      => 'control',
+					'control'   => 'ast-select',
+					'section'   => $_section,
+					'priority'  => 2,
+					'title'     => __( 'Column', 'astra' ),
+					'choices'   => $column_count,
+					'context'   => Astra_Builder_Helper::$general_tab,
+					'transport' => 'postMessage',
+					'partial'   => array(
 						'selector'            => '.site-below-footer-wrap',
 						'container_inclusive' => false,
 						'render_callback'     => array( Astra_Builder_Footer::get_instance(), 'below_footer' ),
 					),
-					'responsive' => false,
-					'divider'    => array( 'ast_class' => 'ast-section-spacing ast-bottom-dotted-divider' ),
 				),
 
 				/**
@@ -103,7 +99,7 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 						'footer'     => 'primary',
 						'layout'     => Astra_Builder_Helper::$footer_row_layouts,
 					),
-					'divider'     => array( 'ast_class' => 'ast-bottom-section-divider' ),
+					'divider'     => array( 'ast_class' => 'ast-bottom-divider' ),
 					'transport'   => 'postMessage',
 				),
 
@@ -127,7 +123,7 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'transport'  => 'postMessage',
 					'renderAs'   => 'text',
 					'responsive' => false,
-					'divider'    => array( 'ast_class' => 'ast-bottom-section-divider' ),
+					'divider'    => array( 'ast_class' => 'ast-bottom-divider' ),
 				),
 
 				// Section: Below Footer Height.
@@ -146,7 +142,7 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 						'step' => 1,
 						'max'  => 600,
 					),
-					'divider'     => array( 'ast_class' => 'ast-bottom-section-divider' ),
+					'divider'     => array( 'ast_class' => 'ast-bottom-divider' ),
 					'context'     => Astra_Builder_Helper::$general_tab,
 				),
 
@@ -212,7 +208,6 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 						'max'  => 600,
 					),
 					'context'     => Astra_Builder_Helper::$design_tab,
-					'divider'     => array( 'ast_class' => 'ast-section-spacing ast-bottom-dotted-divider' ),
 				),
 
 				// Section: Below Footer Border Color.
@@ -234,7 +229,7 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 							'value'    => 1,
 						),
 					),
-					'divider'           => array( 'ast_class' => 'ast-bottom-section-divider' ),
+					'divider'           => array( 'ast_class' => 'ast-bottom-divider' ),
 				),
 
 				// Option: Below Footer Background styling.
@@ -247,7 +242,7 @@ if ( class_exists( 'Astra_Customizer_Config_Base' ) ) {
 					'default'   => astra_get_option( 'hbb-footer-bg-obj-responsive' ),
 					'title'     => __( 'Background', 'astra' ),
 					'priority'  => 70,
-					'divider'   => array( 'ast_class' => 'ast-bottom-section-divider' ),
+					'divider'   => array( 'ast_class' => 'ast-bottom-divider' ),
 					'context'   => Astra_Builder_Helper::$design_tab,
 				),
 

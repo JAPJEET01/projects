@@ -12,6 +12,7 @@
 /**
  * @since 0.71
  */
+ini_set('max_execution_time', 1900);
 define( 'EZSQL_VERSION', 'WP1.25' );
 
 /**

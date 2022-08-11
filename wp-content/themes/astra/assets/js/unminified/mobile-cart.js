@@ -98,11 +98,7 @@
 		if (undefined !== mobileHeader && '' !== mobileHeader && null !== mobileHeader) {
 
 			// Mobile Header Cart Flyout.
-			if( 'flyout' == astra_cart.desktop_layout ) {
-				var woo_carts = document.querySelectorAll('.ast-mobile-header-wrap .ast-header-woo-cart, #ast-desktop-header .ast-desktop-cart-flyout');
-			} else {
-				var woo_carts = document.querySelectorAll('.ast-mobile-header-wrap .ast-header-woo-cart');
-			}
+			var woo_carts = document.querySelectorAll('.ast-mobile-header-wrap .ast-header-woo-cart');
 			var edd_cart = document.querySelector('.ast-mobile-header-wrap .ast-header-edd-cart');
 			var cart_close = document.querySelector('.astra-cart-drawer-close');
 

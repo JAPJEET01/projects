@@ -18,7 +18,7 @@
 .wpcf7 input:not([type="submit"]):focus,
 .wpcf7 textarea:focus,
 .wpcf7 select:focus {
-  border-color: var(--ast-border-color);
+  border-color: #eaeaea;
   outline: 0;
 }
 
@@ -32,7 +32,7 @@
   height: auto;
   border-width: 1px;
   border-style: solid;
-  border-color: var(--ast-border-color);
+  border-color: #eaeaea;
   border-radius: 2px;
   background: #fafafa;
   box-shadow: none;

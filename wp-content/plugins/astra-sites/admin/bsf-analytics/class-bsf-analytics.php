@@ -53,7 +53,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 			define( 'BSF_ANALYTICS_URI', $this->get_analytics_url( $analytics_path ) );
 
 			add_action( 'admin_init', array( $this, 'handle_optin_optout' ) );
-			add_action( 'admin_init', array( $this, 'option_notice' ) );
+			add_action( 'admin_notices', array( $this, 'option_notice' ) );
 			add_action( 'init', array( $this, 'maybe_track_analytics' ), 99 );
 
 			$this->set_actions();
@@ -213,10 +213,10 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 				}
 
 				/* translators: %s product name */
-				$notice_string = __( 'Want to help make <strong>%1s</strong> even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. ' );
+				$notice_string = __( 'Want to help make <strong>%1s</strong> even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. ', 'astra-sites' );
 
 				if ( is_multisite() ) {
-					$notice_string .= __( 'This will be applicable for all sites from the network.' );
+					$notice_string .= __( 'This will be applicable for all sites from the network.', 'astra-sites' );
 				}
 
 				$language_dir = is_rtl() ? 'rtl' : 'ltr';
@@ -240,28 +240,24 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 									</div>
 								</div>',
 							/* translators: %s usage doc link */
-							sprintf( $notice_string . '<span dir="%2s"><a href="%3s" target="_blank" rel="noreferrer noopener">%4s</a><span>', esc_html( $data['product_name'] ), $language_dir, esc_url( $usage_doc_link ), __( ' Know More.' ) ),
-							esc_url(
-								add_query_arg(
-									array(
-										$key . '_analytics_optin' => 'yes',
-										$key . '_analytics_nonce' => wp_create_nonce( $key . '_analytics_optin' ),
-										'bsf_analytics_source' => $key,
-									)
+							sprintf( $notice_string . '<span dir="%2s"><a href="%3s" target="_blank" rel="noreferrer noopener">%4s</a><span>', esc_html( $data['product_name'] ), $language_dir, esc_url( $usage_doc_link ), __( ' Know More.', 'astra-sites' ) ),
+							add_query_arg(
+								array(
+									$key . '_analytics_optin' => 'yes',
+									$key . '_analytics_nonce' => wp_create_nonce( $key . '_analytics_optin' ),
+									'bsf_analytics_source' => $key,
 								)
 							),
-							__( 'Yes! Allow it' ),
-							esc_url(
-								add_query_arg(
-									array(
-										$key . '_analytics_optin' => 'no',
-										$key . '_analytics_nonce' => wp_create_nonce( $key . '_analytics_optin' ),
-										'bsf_analytics_source' => $key,
-									)
+							__( 'Yes! Allow it', 'astra-sites' ),
+							add_query_arg(
+								array(
+									$key . '_analytics_optin' => 'no',
+									$key . '_analytics_nonce' => wp_create_nonce( $key . '_analytics_optin' ),
+									'bsf_analytics_source' => $key,
 								)
 							),
 							MONTH_IN_SECONDS,
-							__( 'No Thanks' )
+							__( 'No Thanks', 'astra-sites' )
 						),
 						'show_if'                    => true,
 						'repeat-notice-after'        => false,
@@ -302,13 +298,11 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 			}
 
 			wp_safe_redirect(
-				esc_url_raw(
-					remove_query_arg(
-						array(
-							$source . '_analytics_optin',
-							$source . '_analytics_nonce',
-							'bsf_analytics_source',
-						)
+				remove_query_arg(
+					array(
+						$source . '_analytics_optin',
+						$source . '_analytics_nonce',
+						'bsf_analytics_source',
 					)
 				)
 			);
@@ -367,7 +361,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 
 				add_settings_field(
 					$key . '-analytics-optin',       // Field ID.
-					__( 'Usage Tracking' ),       // Field title.
+					__( 'Usage Tracking', 'astra-sites' ),       // Field title.
 					array( $this, 'render_settings_field_html' ), // Field callback function.
 					'general',
 					'default',                   // Settings page slug.
@@ -411,15 +405,15 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 				<input id="<?php echo esc_attr( $args['id'] ); ?>" type="checkbox" value="1" name="<?php echo esc_attr( $args['name'] ); ?>" <?php checked( get_site_option( $args['name'], 'no' ), 'yes' ); ?>>
 				<?php
 				/* translators: %s Product title */
-				echo esc_html( sprintf( __( 'Allow %s products to track non-sensitive usage tracking data.' ), $args['title'] ) );// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
+				echo esc_html( sprintf( __( 'Allow %s products to track non-sensitive usage tracking data.', 'astra-sites' ), $args['title'] ) );// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
 
 				if ( is_multisite() ) {
-					esc_html_e( ' This will be applicable for all sites from the network.' );
+					esc_html_e( ' This will be applicable for all sites from the network.', 'astra-sites' );
 				}
 				?>
 			</label>
 			<?php
-			echo wp_kses_post( sprintf( '<a href="%1s" target="_blank" rel="noreferrer noopener">%2s</a>', esc_url( $args['usage_doc_link'] ), __( 'Learn More.' ) ) );
+			echo wp_kses_post( sprintf( '<a href="%1s" target="_blank" rel="noreferrer noopener">%2s</a>', esc_url( $args['usage_doc_link'] ), __( 'Learn More.', 'astra-sites' ) ) );
 			?>
 			</fieldset>
 			<?php

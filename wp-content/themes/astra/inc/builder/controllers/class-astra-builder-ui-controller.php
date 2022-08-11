@@ -186,21 +186,6 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 		}
 
 		/**
-		 * Prepare Edit navigatory trigger for Banner Section in customizer.
-		 *
-		 * @since 3.9.0
-		 */
-		public static function render_banner_customizer_edit_button() {
-			?>
-				<div class="customize-partial-edit-shortcut banner-editor-shortcut" data-id="ahfb">
-					<button aria-label="<?php esc_attr_e( 'Click to edit this element.', 'astra' ); ?>"	title="<?php esc_attr_e( 'Click to edit this Row.', 'astra' ); ?>" class="item-customizer-focus">
-						<?php echo self::fetch_svg_icon( 'edit' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-					</button>
-				</div>
-			<?php
-		}
-
-		/**
 		 * Render Trigger Markup.
 		 *
 		 * @since 3.0.0
@@ -291,9 +276,6 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 		 * @since 3.1.0
 		 */
 		public static function render_mobile_cart_flyout_markup() {
-			$current_canvas_width = astra_get_option( 'woo-desktop-cart-flyout-width' ); 
-			$is_width_long        = $current_canvas_width && $current_canvas_width > 500 ? 'ast-large-view' : '';
-			
 			?>
 			<div class="astra-mobile-cart-overlay"></div>
 			<div id="astra-mobile-cart-drawer" class="astra-cart-drawer open-right">
@@ -307,7 +289,7 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 					?>
 					</div>
 				</div>
-				<div class="astra-cart-drawer-content <?php echo esc_attr( $is_width_long ); ?>">
+				<div class="astra-cart-drawer-content">
 					<?php
 					if ( class_exists( 'Astra_Woocommerce' ) ) {
 						the_widget( 'WC_Widget_Cart', 'title=' );

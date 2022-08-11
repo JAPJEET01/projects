@@ -1,0 +1,69 @@
+Aug 11 2022 13:06:06
+{"type":8192,"message":"Return type of Requests_Utility_CaseInsensitiveDictionary::getIterator() should either be compatible with IteratorAggregate::getIterator(): Traversable, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","file":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","line":91}
+
+Aug 11 2022 13:06:17
+{"type":8192,"message":"Return type of Requests_Utility_CaseInsensitiveDictionary::getIterator() should either be compatible with IteratorAggregate::getIterator(): Traversable, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","file":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","line":91}
+
+Aug 11 2022 13:06:29
+{"Number":8192,"Message":"Return type of Requests_Cookie_Jar::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Cookie\\Jar.php","Line":63}
+
+Aug 11 2022 13:06:29
+{"Number":8192,"Message":"Return type of Requests_Cookie_Jar::offsetGet($key) should either be compatible with ArrayAccess::offsetGet(mixed $offset): mixed, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Cookie\\Jar.php","Line":73}
+
+Aug 11 2022 13:06:29
+{"Number":8192,"Message":"Return type of Requests_Cookie_Jar::offsetSet($key, $value) should either be compatible with ArrayAccess::offsetSet(mixed $offset, mixed $value): void, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Cookie\\Jar.php","Line":89}
+
+Aug 11 2022 13:06:29
+{"Number":8192,"Message":"Return type of Requests_Cookie_Jar::offsetUnset($key) should either be compatible with ArrayAccess::offsetUnset(mixed $offset): void, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Cookie\\Jar.php","Line":102}
+
+Aug 11 2022 13:06:29
+{"Number":8192,"Message":"Return type of Requests_Cookie_Jar::getIterator() should either be compatible with IteratorAggregate::getIterator(): Traversable, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Cookie\\Jar.php","Line":111}
+
+Aug 11 2022 13:06:29
+{"Number":8192,"Message":"http_build_query(): Passing null to parameter #2 ($numeric_prefix) of type string is deprecated","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Transport\\cURL.php","Line":345}
+
+Aug 11 2022 13:06:30
+{"Number":8192,"Message":"Return type of Requests_Utility_CaseInsensitiveDictionary::offsetExists($key) should either be compatible with ArrayAccess::offsetExists(mixed $offset): bool, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","Line":40}
+
+Aug 11 2022 13:06:30
+{"Number":8192,"Message":"Return type of Requests_Utility_CaseInsensitiveDictionary::offsetGet($key) should either be compatible with ArrayAccess::offsetGet(mixed $offset): mixed, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","Line":51}
+
+Aug 11 2022 13:06:30
+{"Number":8192,"Message":"Return type of Requests_Utility_CaseInsensitiveDictionary::offsetSet($key, $value) should either be compatible with ArrayAccess::offsetSet(mixed $offset, mixed $value): void, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","Line":68}
+
+Aug 11 2022 13:06:30
+{"Number":8192,"Message":"Return type of Requests_Utility_CaseInsensitiveDictionary::offsetUnset($key) should either be compatible with ArrayAccess::offsetUnset(mixed $offset): void, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","Line":82}
+
+Aug 11 2022 13:06:30
+{"Number":8192,"Message":"Return type of Requests_Utility_CaseInsensitiveDictionary::getIterator() should either be compatible with IteratorAggregate::getIterator(): Traversable, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","Line":91}
+
+Aug 11 2022 13:06:33
+{"Number":8192,"Message":"Return type of ActionScheduler_DateTime::setTimezone($timezone) should either be compatible with DateTime::setTimezone(DateTimeZone $timezone): DateTime, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\classes\\ActionScheduler_DateTime.php","Line":60}
+
+Aug 11 2022 13:06:33
+{"Number":8192,"Message":"Return type of ActionScheduler_DateTime::getOffset() should either be compatible with DateTime::getOffset(): int, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\classes\\ActionScheduler_DateTime.php","Line":48}
+
+Aug 11 2022 13:06:33
+{"Number":8192,"Message":"Return type of ActionScheduler_DateTime::getTimestamp() should either be compatible with DateTime::getTimestamp(): int, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\classes\\ActionScheduler_DateTime.php","Line":27}
+
+Aug 11 2022 13:06:33
+{"Number":8192,"Message":"DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\functions.php","Line":316}
+
+Aug 11 2022 13:06:34
+{"Number":8192,"Message":"Return type of ActionScheduler_DateTime::setTimezone($timezone) should either be compatible with DateTime::setTimezone(DateTimeZone $timezone): DateTime, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\classes\\ActionScheduler_DateTime.php","Line":60}
+
+Aug 11 2022 13:06:34
+{"Number":8192,"Message":"Return type of ActionScheduler_DateTime::getOffset() should either be compatible with DateTime::getOffset(): int, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\classes\\ActionScheduler_DateTime.php","Line":48}
+
+Aug 11 2022 13:06:34
+{"Number":8192,"Message":"Return type of ActionScheduler_DateTime::getTimestamp() should either be compatible with DateTime::getTimestamp(): int, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\classes\\ActionScheduler_DateTime.php","Line":27}
+
+Aug 11 2022 13:06:34
+{"Number":8192,"Message":"DateTime::__construct(): Passing null to parameter #1 ($datetime) of type string is deprecated","File":"C:\\xampp\\htdocs\\wordpress\\wp-content\\plugins\\wpforms-lite\\vendor\\woocommerce\\action-scheduler\\functions.php","Line":316}
+
+Aug 11 2022 13:06:34
+{"type":8192,"message":"Return type of Requests_Utility_CaseInsensitiveDictionary::getIterator() should either be compatible with IteratorAggregate::getIterator(): Traversable, or the #[\\ReturnTypeWillChange] attribute should be used to temporarily suppress the notice","file":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Utility\\CaseInsensitiveDictionary.php","line":91}
+
+Aug 11 2022 13:06:35
+{"type":8192,"message":"http_build_query(): Passing null to parameter #2 ($numeric_prefix) of type string is deprecated","file":"C:\\xampp\\htdocs\\wordpress\\wp-includes\\Requests\\Transport\\cURL.php","line":345}
+

@@ -311,7 +311,6 @@ class Astra_Customizer_Header_Builder_Configs extends Astra_Customizer_Config_Ba
 						'value'   => 'general',
 					),
 				),
-				'divider'     => array( 'ast_class' => 'ast-section-spacing' ),
 			),
 
 			/**
@@ -426,7 +425,6 @@ class Astra_Customizer_Header_Builder_Configs extends Astra_Customizer_Config_Ba
 				'priority' => 44,
 				'settings' => array(),
 				'context'  => Astra_Builder_Helper::$general_tab,
-				'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
 			),
 
 			/**
@@ -444,7 +442,6 @@ class Astra_Customizer_Header_Builder_Configs extends Astra_Customizer_Config_Ba
 				'priority'    => 45,
 				'context'     => Astra_Builder_Helper::$general_tab,
 				'settings'    => false,
-				'divider'     => array( 'ast_class' => 'ast-section-spacing' ),
 			),
 
 			// Option: Header Width.
@@ -473,7 +470,7 @@ class Astra_Customizer_Header_Builder_Configs extends Astra_Customizer_Config_Ba
 				'transport'  => 'postMessage',
 				'renderAs'   => 'text',
 				'responsive' => false,
-				'divider'    => array( 'ast_class' => 'ast-section-spacing ast-bottom-section-divider' ),
+				'divider'    => array( 'ast_class' => 'ast-bottom-divider' ),
 			),
 
 			array(
